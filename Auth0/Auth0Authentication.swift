@@ -40,7 +40,7 @@ struct Auth0Authentication: Authentication {
 
     // swiftlint:disable:next function_parameter_count
     func login(usernameOrEmail username: String, password: String, multifactorCode: String?, connection: String, scope: String, parameters: [String: Any]) -> Request<Credentials, AuthenticationError> {
-        let resourceOwner = URL(string: "/oauth/ro", relativeTo: self.url)!
+        let resourceOwner = URL(string: "/oauth/token", relativeTo: self.url)!
         var payload: [String: Any] = [
             "username": username,
             "password": password,
